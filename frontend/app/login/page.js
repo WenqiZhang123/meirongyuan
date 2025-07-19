@@ -2,7 +2,7 @@
 
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
-import { createClient } from '@/lib/supabase/utils'
+import { createClient } from '@/lib/supabase/client'
 
 export default function AuthForm() {
   const supabase = createClient()
