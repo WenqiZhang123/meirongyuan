@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "frontend/.next"
+
+[dev]
+  # 如果你在本地运行 netlify dev，这会很有用
+  # command = "npm run dev"
+  # targetPort = 3000
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs" 
