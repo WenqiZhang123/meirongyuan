@@ -1,5 +1,8 @@
 {
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.11"
+  "name": "meirongyuan-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm run build"
   }
 }
