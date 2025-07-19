@@ -1,16 +1,7 @@
-// 文件路径: frontend/lib/supabase/utils.js
-import { createBrowserClient } from '@supabase/ssr'
+// 文件路径: frontend/lib/supabase/server.js
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-// 用于客户端组件
-export const createClient = () =>
-  createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  )
-
-// 用于服务器组件、路由处理器、服务器动作
 export const createServer = () => {
   const cookieStore = cookies()
   return createServerClient(
@@ -25,16 +16,14 @@ export const createServer = () => {
           try {
             cookieStore.set({ name, value, ...options })
           } catch (error) {
-            // The `set` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+            // This can be ignored
           }
         },
         remove(name, options) {
           try {
             cookieStore.set({ name, value: '', ...options })
           } catch (error) {
-            // The `delete` method was called from a Server Component.
+            // This can be ignored
           }
         },
       },

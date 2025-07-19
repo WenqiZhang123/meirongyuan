@@ -1,4 +1,4 @@
-import { createServer } from '@/lib/supabase/utils'
+import { createServer } from '@/lib/supabase/server'
 
 export default async function Services() {
   const supabase = createServer()
