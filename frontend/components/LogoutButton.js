@@ -1,11 +1,10 @@
 'use client'
 
-import { createClient } from '@/lib/supabaseClient'
+import { createClient } from '@/lib/supabase/utils'
 import { useRouter } from 'next/navigation'
 
 export default function LogoutButton() {
   const router = useRouter()
-  // This createClient function is safe to use in client components
   const supabase = createClient()
 
   const handleLogout = async () => {

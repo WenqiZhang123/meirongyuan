@@ -1,11 +1,10 @@
-import { createServerComponentClient } from '@supabase/ssr'
+import { createServer } from '@/lib/supabase/utils'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
 import LogoutButton from '@/components/LogoutButton'
 
 export default async function Home() {
-  const cookieStore = cookies()
-  const supabase = createServerComponentClient({ cookies: () => cookieStore })
+  const supabase = createServer()
 
   const {
     data: { session },
